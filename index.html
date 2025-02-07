@@ -61,7 +61,7 @@
                 data: {
                     labels: gaValues,
                     datasets: [
-                        { label: 'Медиана', data: medianValues, borderColor: 'blue', fill: false },
+                        { label: 'Медиана', data: medianValues, borderColor: 'blue', fill: false, borderWidth: 2 },
                         { label: '5-95-й процентили', data: lowerValues, borderColor: 'gray', fill: '+1' },
                         { label: '5-95-й процентили', data: upperValues, borderColor: 'gray', fill: '-1' },
                         { label: 'Ваше значение', data: [{ x: ga, y: mcaPsv }], borderColor: 'red', pointRadius: 5, type: 'scatter' }
@@ -69,7 +69,13 @@
                 },
                 options: {
                     responsive: true,
-                    scales: { x: { title: { display: true, text: 'Гестационный возраст (недели)' } }, y: { title: { display: true, text: 'MCA-PSV (см/с)' } } }
+                    scales: {
+                        x: { title: { display: true, text: 'Гестационный возраст (недели)' } },
+                        y: { title: { display: true, text: 'MCA-PSV (см/с)' } }
+                    },
+                    elements: {
+                        point: { radius: 3 }
+                    }
                 }
             });
         }
